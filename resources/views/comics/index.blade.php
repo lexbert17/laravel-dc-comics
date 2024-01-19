@@ -2,7 +2,11 @@
 
 @section('content')
     <h1 class="mb-4 text-center">lista comics</h1>
+    
     <div class="container">
+      <div>
+        <a class="btn btn-primary mb-3" href="{{route('comics.create')}}">Aggiungi</a>
+      </div>
         <table class="table py-5">
             <thead>
               <tr>
@@ -24,7 +28,7 @@
                     <th>{{$comic->type}}</th>
                     <th>
                        <a class="btn btn-success" href="{{route('comics.show', ['comic'=> $comic->id])}}">Dettagli</a>
-                       <a class="btn btn-warning" href="{{route('comics.create', ['comic'=> $comic->id])}}">Modifica</a>
+                       
                     </th>       
                 </tr> 
                 
