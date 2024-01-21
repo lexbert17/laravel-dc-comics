@@ -29,6 +29,12 @@
                     <th>
                        <a class="btn btn-success" href="{{route('comics.show', ['comic'=> $comic->id])}}">Dettagli</a>
                        <a class="btn btn-warning" href="{{route('comics.edit', ['comic'=> $comic->id])}}">Modifica</a>
+
+                       <form class="d-inline-block" action="{{route('comics.destroy', ['comic' =>$comic->id])}}" method="post">
+                        @csrf
+                        @method('delete')
+                        <button type="button" class="btn btn-danger">Danger</button>
+                       </form>
                        
                     </th>       
                 </tr> 
