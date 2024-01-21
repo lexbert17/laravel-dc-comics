@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ComicController extends Controller
 {
@@ -73,7 +74,8 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -85,7 +87,10 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $form_data = $request->all();
+        $comic_to_update = Comic::findOrFail($id);
+        $comic_to_update->update($form_data);
+        return redirect()->route('comics.show', ['comic' => $comic_to_update->id]);
     }
 
     /**

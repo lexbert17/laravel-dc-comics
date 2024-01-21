@@ -28,6 +28,7 @@
                     <th>{{$comic->type}}</th>
                     <th>
                        <a class="btn btn-success" href="{{route('comics.show', ['comic'=> $comic->id])}}">Dettagli</a>
+                       <a class="btn btn-warning" href="{{route('comics.edit', ['comic'=> $comic->id])}}">Modifica</a>
                        
                     </th>       
                 </tr> 
