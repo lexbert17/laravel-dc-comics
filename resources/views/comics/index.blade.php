@@ -30,10 +30,10 @@
                        <a class="btn btn-success" href="{{route('comics.show', ['comic'=> $comic->id])}}">Dettagli</a>
                        <a class="btn btn-warning" href="{{route('comics.edit', ['comic'=> $comic->id])}}">Modifica</a>
 
-                       <form class="d-inline-block" action="{{route('comics.destroy', ['comic' =>$comic->id])}}" method="post">
+                       <form class="d-inline-block" action="{{route('comics.destroy', ['comic' =>$comic->id])}}" method="POST">
                         @csrf
-                        @method('delete')
-                        <button type="button" class="btn btn-danger">Danger</button>
+                        @method('DELETE')
+                        <button type="button" class="btn btn-danger">Cancella</button>
                        </form>
                        
                     </th>       
